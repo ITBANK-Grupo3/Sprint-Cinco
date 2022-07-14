@@ -12,6 +12,10 @@ class Cliente:
 class ClienteGold(Cliente):
     def puede_comprar_dolar(self):
         return True
+    def puede_crear_tarjeta_credito(self):
+        return True
+    def puede_crear_chequera(self):
+        return True
     def __init__(self, data, tarjetaDebito=1):
         print('Se creo gold')  
         super().__init__(data)
@@ -19,6 +23,10 @@ class ClienteGold(Cliente):
 
 class ClienteClassic(Cliente):
     def puede_comprar_dolar(self):
+        return False
+    def puede_crear_tarjeta_credito(self):
+        return False
+    def puede_crear_chequera(self):
         return False
     def __init__(self, data, tarjetaDebito=1):
         print('Se creo classic')
@@ -28,6 +36,10 @@ class ClienteClassic(Cliente):
 
 class ClienteBlack(Cliente):
     def puede_comprar_dolar(self):
+        return True
+    def puede_crear_tarjeta_credito(self):
+        return True
+    def puede_crear_chequera(self):
         return True
     def __init__(self, data):
         print('Se creo black')
