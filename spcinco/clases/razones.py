@@ -1,8 +1,9 @@
 class Razon(object):
-  def __init__(self, evento):
+  def __init__(self, evento, tipoCliente):
     self.estado = evento["estado"]
     self.fecha = evento["fecha"]
     self.numero = evento["numero"]
+    self.tipoCliente = tipoCliente
 
   def __str__(self):
     return f"Solicitud nro {self.numero} | estado: {self.estado} | {self.fecha}"
@@ -11,38 +12,26 @@ class Razon(object):
     pass
 
 class RazonAltaChequera(Razon):
-  def __init__(self, evento):
-    super().__init__(evento)
   def __str__(self):
-    return f"Surgió un error al dar de alta la Chequera"
+    return f"alta la Chequera"
 
 class RazonAltaTarjetaDeCredito(Razon):
-  def __init__(self, evento):
-    super().__init__(evento)
   def __str__(self):
-    return f"Surgió un error al dar de alta la tarjeta"
+    return f"alta la tarjeta"
 
 class RazonCompraDolar(Razon):
-  def __init__(self, evento):
-    super().__init__(evento)
   def __str__(self):
-    return f""
+    return f"compra dolar"
 
 class RazonRetiroEfectivo(Razon):
-  def __init__(self, evento):
-    super().__init__(evento)
   def __str__(self):
-    return f""
+    return f"retiro efectivo"
 
 class RazonTransferenciaEnviada(Razon):
-  def __init__(self, evento):
-    super().__init__(evento)
   def __str__(self):
-    return f""
+    return f"transferencia enviada"
 
 class RazonTransferenciaRecibida(Razon):
-  def __init__(self, evento):
-    super().__init__(evento)
   def __str__(self):
-    return f""
+    return f"transferencia recibida"
 
