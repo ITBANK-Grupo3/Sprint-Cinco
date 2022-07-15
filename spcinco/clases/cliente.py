@@ -1,10 +1,13 @@
+from clases import direccion
 class Cliente:
     def __init__(self,data):
         self.tipo=data['tipo']
         self.dni=data['dni']
         self.nombre=data['nombre']
         self.apellido=data['apellido']
+        self.direccion= direccion.Direccion(data)
         print('Se creo cliente: '+self.dni)
+        print(self.direccion.ciudad)
         
     def baja(self):
         self.tipo='baja'
@@ -20,6 +23,9 @@ class ClienteGold(Cliente):
         print('Se creo gold')  
         super().__init__(data)
         self.tarjetaDebito = tarjetaDebito
+    
+    
+         
 
 class ClienteClassic(Cliente):
     def puede_comprar_dolar(self):
@@ -32,6 +38,7 @@ class ClienteClassic(Cliente):
         print('Se creo classic')
         super().__init__(data) 
         self.tarjetaDebito=tarjetaDebito
+        
     
 
 class ClienteBlack(Cliente):
@@ -44,5 +51,9 @@ class ClienteBlack(Cliente):
     def __init__(self, data):
         print('Se creo black')
         super().__init__(data)
+        
+    
+
+
 
     
