@@ -2,42 +2,34 @@ import lector
 import errores
 import salidaWeb
 
-'''#Procesamiento Cliente Classic
-dataClassic = lector.Lector('../eventos-classic.json')
+jsonBlack = "../eventos-black.json"
+jsonClassic = "../eventos-classic.json"
+jsonGold = "../eventos-gold.json"
 
-eventosClassic = dataClassic.eventos
-clienteClassic = dataClassic.cliente
+#Procesamiento Cliente Classic
+cuentaClassic = lector.Lector(jsonClassic)
+
+eventosClassic = cuentaClassic.eventos
+clienteClassic = cuentaClassic.cuenta.tipo_de_cliente
 erroresDataClassic = errores.FiltradoDeErrores(eventosClassic, clienteClassic.tipo)
 
 eventosProcesadosClassic = erroresDataClassic.eventosProcesados
-salidaWeb.SalidaHTML.procesar("clienteClassic",eventosProcesadosClassic)
 
-#Procesamiento Cliente Gold
-dataGold = lector.Lector('../eventos-gold.json')
+# Procesamiento Cliente Gold
+cuentaGold = lector.Lector('../eventos-gold.json')
 
-eventosGold = dataGold.eventos
-clienteGold = dataGold.cliente
+eventosGold = cuentaGold.eventos
+clienteGold = cuentaGold.cuenta.tipo_de_cliente
 erroresDataGold = errores.FiltradoDeErrores(eventosGold, clienteGold.tipo)
 
 eventosProcesadosGold = erroresDataGold.eventosProcesados
-salidaWeb.SalidaHTML.procesar("clienteGold", eventosProcesadosGold)
 
 #Procesamiento Cliente Black
-dataBlack = lector.Lector('../eventos-black.json')
+cuentaBlack = lector.Lector('../eventos-black.json')
 
-eventosBlack = dataBlack.eventos
-clienteBlack = dataBlack.cliente
+eventosBlack = cuentaBlack.eventos
+clienteBlack = cuentaBlack.cuenta.tipo_de_cliente
 erroresDataBlack = errores.FiltradoDeErrores(eventosBlack, clienteBlack.tipo)
 
 eventosProcesadosBlack = erroresDataBlack.eventosProcesados
-salidaWeb.SalidaHTML.procesar("clienteBlack", eventosProcesadosBlack)
-
-# Datos en pantalla
-print("Eventos Classic-----------")
-print(eventosProcesadosClassic)
-print()
-print("Eventos Gold--------------")
-print(eventosProcesadosGold)
-print()
-print("Eventos Black-------------")
-print(eventosProcesadosBlack)'''
+print(eventosProcesadosBlack)
