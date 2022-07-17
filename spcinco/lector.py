@@ -1,25 +1,12 @@
-from clases import cuenta
-from clases import cliente
+import cuenta
 import json
-
-from clases.cuenta import CuentaClassic
 
 class Lector():
     def __init__(self, archivo):
         self.archivo = archivo
         self.cargar()
         self.eventos=self.data['transacciones']
-        if self.data['tipo']=="BLACK":
-            self.cliente=cliente.ClienteBlack(self.data)
-            # self.cuenta = cuenta.CuentaBlack()
-        elif self.data['tipo']=="GOLD":
-            self.cliente = cliente.ClienteGold(self.data)
-            # self.cuenta = cuenta.CuentaGold()
-        else:
-            self.cliente = cliente.ClienteClassic(self.data)
-            # self.cuenta = CuentaClassic()
-            
-        
+        self.cuenta = cuenta.Cuenta(self.data['tipo'],self.data,self.eventos[-1]['saldoEnCuenta'])
 
     def cargar(self):
         f=open(self.archivo)

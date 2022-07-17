@@ -2,7 +2,7 @@ import lector
 import errores
 import salidaWeb
 
-#Procesamiento Cliente Classic
+'''#Procesamiento Cliente Classic
 dataClassic = lector.Lector('../eventos-classic.json')
 
 eventosClassic = dataClassic.eventos
@@ -40,4 +40,4 @@ print("Eventos Gold--------------")
 print(eventosProcesadosGold)
 print()
 print("Eventos Black-------------")
-print(eventosProcesadosBlack)
+print(eventosProcesadosBlack)'''

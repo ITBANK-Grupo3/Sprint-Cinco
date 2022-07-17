@@ -1,11 +1,12 @@
 from clases import direccion
 class Cliente:
-    def __init__(self,data):
+    def __init__(self,data,saldoEnCuenta):
         self.tipo=data['tipo']
         self.dni=data['dni']
         self.nombre=data['nombre']
         self.apellido=data['apellido']
         self.direccion= direccion.Direccion(data)
+        self.saldoEnCuenta=saldoEnCuenta
         print('Se creo cliente: '+self.dni)
         print(self.direccion.ciudad)
         
@@ -13,15 +14,16 @@ class Cliente:
         self.tipo='baja'
 
 class ClienteGold(Cliente):
+
     def puede_comprar_dolar(self):
         return True
     def puede_crear_tarjeta_credito(self):
         return True
     def puede_crear_chequera(self):
         return True
-    def __init__(self, data, tarjetaDebito=1):
+    def __init__(self, data,saldoEnCuenta, tarjetaDebito=1):
         print('Se creo gold')  
-        super().__init__(data)
+        super().__init__(data,saldoEnCuenta)
         self.tarjetaDebito = tarjetaDebito
     
     
@@ -34,12 +36,10 @@ class ClienteClassic(Cliente):
         return False
     def puede_crear_chequera(self):
         return False
-    def __init__(self, data, tarjetaDebito=1):
+    def __init__(self, data,saldoEnCuenta, tarjetaDebito=1):
         print('Se creo classic')
-        super().__init__(data) 
+        super().__init__(data,saldoEnCuenta) 
         self.tarjetaDebito=tarjetaDebito
-        
-    
 
 class ClienteBlack(Cliente):
     def puede_comprar_dolar(self):
@@ -48,9 +48,9 @@ class ClienteBlack(Cliente):
         return True
     def puede_crear_chequera(self):
         return True
-    def __init__(self, data):
+    def __init__(self, data,saldoEnCuenta):
         print('Se creo black')
-        super().__init__(data)
+        super().__init__(data,saldoEnCuenta)
         
     
 
