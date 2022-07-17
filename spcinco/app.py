@@ -2,19 +2,38 @@ import lector
 import errores
 
 #Procesamiento Cliente Classic
-data = lector.Lector('../eventos-classic.json')
+dataClassic = lector.Lector('../eventos-classic.json')
 
-eventos = data.eventos
-cliente = data.cliente
-erroresData = errores.FiltradoDeErrores(eventos, cliente.tipo)
+eventosClassic = dataClassic.eventos
+clienteClassic = dataClassic.cliente
+erroresDataClassic = errores.FiltradoDeErrores(eventosClassic, clienteClassic.tipo)
 
-eventosProcesados = erroresData.eventosProcesados
+eventosProcesadosClassic = erroresDataClassic.eventosProcesados
+
+#Procesamiento Cliente Gold
+dataGold = lector.Lector('../eventos-gold.json')
+
+eventosGold = dataGold.eventos
+clienteGold = dataGold.cliente
+erroresDataGold = errores.FiltradoDeErrores(eventosGold, clienteGold.tipo)
+
+eventosProcesadosGold = erroresDataGold.eventosProcesados
 
 #Procesamiento Cliente Black
-dataDos = lector.Lector('../eventos-black.json')
+dataBlack = lector.Lector('../eventos-black.json')
 
-eventosDos = dataDos.eventos
-clienteDos = dataDos.cliente
-erroresDataDos = errores.FiltradoDeErrores(eventosDos, clienteDos.tipo)
+eventosBlack = dataBlack.eventos
+clienteBlack = dataBlack.cliente
+erroresDataBlack = errores.FiltradoDeErrores(eventosBlack, clienteBlack.tipo)
 
-eventosProcesadosDos = erroresDataDos.eventosProcesados
+eventosProcesadosBlack = erroresDataBlack.eventosProcesados
+
+# Datos en pantalla
+print("Eventos Classic-----------")
+print(eventosProcesadosClassic)
+print()
+print("Eventos Gold--------------")
+print(eventosProcesadosGold)
+print()
+print("Eventos Black-------------")
+print(eventosProcesadosBlack)
