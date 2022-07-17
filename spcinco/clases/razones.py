@@ -12,10 +12,10 @@ class RazonAltaChequera(Razon):
     if self.tipoCliente == "CLASSIC":
       return "El usuario perteneciente a Classic no tiene acceso a la creación de chequeras."
     elif self.tipoCliente == "BLACK":
-      if self.totalChequeras > 2:
+      if self.totalChequeras > 1:
         return "El usuario perteneciente a Black solo puede acceder a dos chequera."
     elif self.tipoCliente == "GOLD":
-      if self.totalChequeras > 1:
+      if self.totalChequeras > 0:
         return "El usuario perteneciente a Gold solo puede acceder a una chequera."
 
 class RazonAltaTarjetaDeCredito(Razon):
@@ -23,10 +23,10 @@ class RazonAltaTarjetaDeCredito(Razon):
     if self.tipoCliente == "CLASSIC":
       return "El usuario perteneciente a Classic no tiene acceso a la creación de tarjetas de crédito."
     elif self.tipoCliente == "BLACK":
-      if self.totalTarjetasCredito > 5:
+      if self.totalTarjetasCredito > 4:
         return "El usuario perteneciente a Black solo puede acceder hasta cinco tarjetas de crédito."
     elif self.tipoCliente == "GOLD":
-      if self.totalTarjetasCredito > 1:
+      if self.totalTarjetasCredito > 0:
         return "El usuario perteneciente a Gold solo puede acceder a una tarjeta de crédito."
 
 class RazonCompraDolar(Razon):
