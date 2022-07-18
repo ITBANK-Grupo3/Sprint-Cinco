@@ -26,4 +26,4 @@ class FiltradoDeErrores(object):
           razon = str(rz.RazonTransferenciaRecibida(evento, tipoCliente))
       else:
         razon = "Solicitud realizada con éxito"
-      self.eventosProcesados.append({"cuentaNumero": evento["cuentaNumero"],"SolicitudNro":evento["numero"], "estado":evento["estado"],"razon": razon, "fecha": evento["fecha"]})
+      self.eventosProcesados.append({"cuentaNumero": evento["cuentaNumero"],"SolicitudNro":evento["numero"],"tipo": evento["tipo"], "estado":evento["estado"],"razon": razon,"monto": evento["monto"], "fecha": evento["fecha"]})

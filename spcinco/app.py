@@ -32,4 +32,3 @@ clienteBlack = cuentaBlack.cuenta.tipo_de_cliente
 erroresDataBlack = errores.FiltradoDeErrores(eventosBlack, clienteBlack.tipo)
 
 eventosProcesadosBlack = erroresDataBlack.eventosProcesados
-print(eventosProcesadosBlack)
