@@ -23,11 +23,11 @@ class SalidaHTML():
             if i["estado"]== "ACEPTADA":
 
                 datos+=f"""
-                            <tr class="table-success"><td>{str(i['fecha'])}</td><td>{str(i['tipo']).replace("_", " ")}</td><td class="fw-bold">{str(i['estado'])}</td><td>{str(i['monto'])}</td><td>{str(i['razon'])}</td></tr>
+                            <tr class="table-success"><td>{str(i['fecha'])}</td><td>{str(i['tipo']).replace("_", " ")}</td><td class="fw-bold">{str(i['estado'])}</td><td>${str(i['monto'])}</td><td>{str(i['razon'])}</td></tr>
                     """
             else:
                 datos+=f"""
-                           <tr class="table-danger"><td>{str(i['fecha'])}</td><td>{str(i['tipo']).replace("_", " ")}</td><td class="fw-bold">{str(i['estado'])}</td><td>{str(i['monto'])}</td><td>{str(i['razon'])}</td></tr> 
+                           <tr class="table-danger"><td>{str(i['fecha'])}</td><td>{str(i['tipo']).replace("_", " ")}</td><td class="fw-bold">{str(i['estado'])}</td><td>${str(i['monto'])}</td><td>{str(i['razon'])}</td></tr> 
                     """
         datos+="""
             </table>
