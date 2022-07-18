@@ -12,8 +12,8 @@ class SalidaHTML():
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
         </head>
         <body style="background-color:antiquewhite">
-            <h1 class="p4 bg-primary text-white border-radius rounded-bottom">ITBANK</h1>
-            <div class="fs-2 text fw-bold"> {cliente.apellido +" "+cliente.nombre}<div>
+            <h1 class="p-2 bg-primary text-white border-radius rounded-bottom">ITBANK</h1>
+            <div class="fs-2 text fw-bold m-5"> {cliente.apellido +" "+cliente.nombre}<div>
             <div class="fs-4"><b >Numero Cliente: </b>{str(dicc[0]['cuentaNumero'])}</div>
             <div class="fs-4"><b >DNI: </b>{cliente.dni}</div>
             <div class="fs-4"><b >Direccion: </b>{cliente.direccion.calle} {cliente.direccion.numero}, {cliente.direccion.ciudad} </div>
