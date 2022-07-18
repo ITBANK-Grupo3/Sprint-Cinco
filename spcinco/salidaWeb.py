@@ -3,7 +3,7 @@ class SalidaHTML():
         pass
 
     def procesar(cliente,dicc, nom):
-        f=open(str(cliente.dni) + nom + '.html', 'w')
+        f=open(str(cliente.dni) + nom + '.html', 'w', encoding='utf-8')
         
         datos= f"""
         <html>
